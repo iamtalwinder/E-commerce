@@ -23,7 +23,7 @@ export default {
 			countInStock: 4,
 		},
 		{
-			_id: 3,
+			id: 3,
 			name: "Slim Pants",
 			category: "Pants",
 			image: "/images/3.jpg",
@@ -34,7 +34,7 @@ export default {
 			countInStock: 4,
 		},
 		{
-			_id: 4,
+			id: 4,
 			name: "Fit Pants",
 			category: "Pants",
 			image: "/images/4.jpg",
