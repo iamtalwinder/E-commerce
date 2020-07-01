@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../actions/cartActions";
@@ -22,6 +22,8 @@ function CartScreen(props) {
 	const removeFromCartHandler = (productId) => {
 		dispatch(removeFromCart(productId));
 	};
+
+	const checkoutHandler = () => {};
 
 	return (
 		<div className="cart-container">
@@ -67,7 +69,20 @@ function CartScreen(props) {
 						))}
 				</ul>
 			</div>
-			<div className="cart-action">payment</div>
+			<div className="cart-action">
+				<h3>
+					Subtotal ( {cart.cartItems.reduce((a, c) => a + parseInt(c.qty), 0)}{" "}
+					items) : ${" "}
+					{cart.cartItems.reduce((a, c) => a + c.price * parseInt(c.qty), 0)}
+				</h3>
+				<button
+					onClick={checkoutHandler}
+					className="button primary full-width"
+					disabled={cart.cartItems.length === 0}
+				>
+					Proceed to Checkout
+				</button>
+			</div>
 		</div>
 	);
 }
