@@ -54,6 +54,10 @@ body {
 	font-size: 3rem;
 }
 
+.header-links {
+	position: relative;
+}
+
 .header-links .nav-link {
 	color: #ffffff;
 	text-decoration: none;
@@ -63,6 +67,16 @@ body {
 
 .header-links .nav-link:hover {
 	color: #ff8000;
+}
+
+.cart-badge {
+	position: absolute;
+	top: -0.6rem;
+	right: 12rem;
+	padding: 0.5rem 1rem;
+	border-radius: 50%;
+	background: red;
+	color: white;
 }
 
 /*Nav bar ends*/
