@@ -27,3 +27,24 @@ export const productListReducer = (state = { products: [] }, action) => {
 			return state;
 	}
 };
+
+export const productDetailsReducer = (state = { product: {} }, action) => {
+	switch (action.type) {
+		case PRODUCT_DETAILS_REQUEST:
+			return Object.assign({}, state, {
+				loading: true,
+			});
+		case PRODUCT_DETAILS_SUCCESS:
+			return Object.assign({}, state, {
+				loading: false,
+				product: action.payload,
+			});
+		case PRODUCT_DETAILS_FAIL:
+			return Object.assign({}, state, {
+				loading: false,
+				error: action.payload,
+			});
+		default:
+			return state;
+	}
+};
