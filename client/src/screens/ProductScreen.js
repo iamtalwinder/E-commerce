@@ -10,9 +10,13 @@ function ProductScreen(props) {
 	const dispatch = useDispatch();
 
 	const handleAddToCart = () => {
-		props.history.push(
-			"/cart?productId=" + props.match.params.id + "?qty=" + qty
-		);
+		props.history.push({
+			pathname: "/cart",
+			state: {
+				productId: props.match.params.id,
+				qty: qty,
+			},
+		});
 	};
 
 	useEffect(() => {
@@ -20,7 +24,6 @@ function ProductScreen(props) {
 	}, []);
 	if (loading) return <h1>Loading...</h1>;
 	if (error) return <h1>Error</h1>;
-	console.log(product);
 	return (
 		<div>
 			<div className="back-to-result">

@@ -18,7 +18,6 @@ function HomeScreen() {
 	if (loading) return <h1>Loading...</h1>;
 	if (error) return <h1>error...</h1>;
 	if (products) {
-		console.log(products);
 		return (
 			<ul className="products">
 				{products.map((product) => (
