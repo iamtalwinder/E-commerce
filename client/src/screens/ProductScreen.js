@@ -13,7 +13,7 @@ function ProductScreen(props) {
 		props.history.push({
 			pathname: "/cart",
 			state: {
-				productId: props.match.params.id,
+				id: props.match.params.id,
 				qty: qty,
 			},
 		});
