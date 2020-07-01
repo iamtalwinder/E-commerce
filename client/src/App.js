@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
 
 function App() {
 	const openMenu = () => {
@@ -50,7 +51,7 @@ function App() {
 					</ul>
 				</aside>
 				<main className="main">
-					<div className="content">content</div>
+					<Route exact path="/" component={HomeScreen} />
 				</main>
 				<footer className="footer">All rights reserved</footer>
 			</div>
