@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { listProducts } from "../actions/productActions";
 
@@ -18,7 +19,31 @@ function HomeScreen() {
 	if (error) return <h1>error...</h1>;
 	if (products) {
 		console.log(products);
-		return <h1>p</h1>;
+		return (
+			<ul className="products">
+				{products.map((product) => (
+					<li key={product.id}>
+						<div className="product">
+							<Link to={"/product/" + product.id}>
+								<img
+									className="product-image"
+									src={product.image}
+									alt="product"
+								/>
+							</Link>
+							<div className="product-name">
+								<Link to={"/product/" + product.id}>{product.name}</Link>
+							</div>
+							<div className="product-brand">{product.brand}</div>
+							<div className="product-price">${product.price}</div>
+							<div className="product-rating">
+								{product.rating} Stars ({product.numReiews} Reviews)
+							</div>
+						</div>
+					</li>
+				))}
+			</ul>
+		);
 	}
 }
 

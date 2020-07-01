@@ -5,11 +5,9 @@ import HomeScreen from "./screens/HomeScreen";
 function App() {
 	const openMenu = () => {
 		document.querySelector(".sidebar").classList.add("open");
-		document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 	};
 	const closeMenu = () => {
 		document.querySelector(".sidebar").classList.remove("open");
-		document.body.style.backgroundColor = "white";
 	};
 
 	return (
