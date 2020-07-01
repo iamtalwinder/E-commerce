@@ -37,7 +37,7 @@ function HomeScreen() {
 							<div className="product-brand">{product.brand}</div>
 							<div className="product-price">${product.price}</div>
 							<div className="product-rating">
-								{product.rating} Stars ({product.numReiews} Reviews)
+								{product.rating} Stars ({product.numReviews} Reviews)
 							</div>
 						</div>
 					</li>
